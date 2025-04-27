@@ -3,7 +3,7 @@ import {
   Box,
   Container,
   Typography,
-  Grid,
+  Stack,
   TextField,
   FormControl,
   InputLabel,
@@ -38,14 +38,14 @@ export default function Quote() {
         Upload your design files and specifications to get an instant quote
       </Typography>
 
-      <Grid container spacing={4}>
-        <Grid item xs={12} md={8}>
+      <Stack direction={{ xs: 'column', md: 'row' }} spacing={4}>
+        <Box sx={{ flex: 2 }}>
           <Paper sx={{ p: 3 }}>
             <Typography variant="h6" gutterBottom>
               PCB Specifications
             </Typography>
-            <Grid container spacing={3}>
-              <Grid item xs={12} sm={6}>
+            <Stack spacing={3}>
+              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3}>
                 <FormControl fullWidth>
                   <InputLabel>PCB Type</InputLabel>
                   <Select
@@ -59,8 +59,6 @@ export default function Quote() {
                     <MenuItem value="rigid-flex">Rigid-Flex PCB</MenuItem>
                   </Select>
                 </FormControl>
-              </Grid>
-              <Grid item xs={12} sm={6}>
                 <FormControl fullWidth>
                   <InputLabel>Number of Layers</InputLabel>
                   <Select
@@ -75,8 +73,8 @@ export default function Quote() {
                     <MenuItem value="8">8 Layers</MenuItem>
                   </Select>
                 </FormControl>
-              </Grid>
-              <Grid item xs={12} sm={6}>
+              </Stack>
+              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3}>
                 <TextField
                   fullWidth
                   label="Quantity"
@@ -84,8 +82,6 @@ export default function Quote() {
                   value={quantity}
                   onChange={(e) => setQuantity(e.target.value)}
                 />
-              </Grid>
-              <Grid item xs={12} sm={6}>
                 <TextField
                   fullWidth
                   label="Width (mm)"
@@ -95,8 +91,6 @@ export default function Quote() {
                     setDimensions({ ...dimensions, width: e.target.value })
                   }
                 />
-              </Grid>
-              <Grid item xs={12} sm={6}>
                 <TextField
                   fullWidth
                   label="Height (mm)"
@@ -106,8 +100,8 @@ export default function Quote() {
                     setDimensions({ ...dimensions, height: e.target.value })
                   }
                 />
-              </Grid>
-            </Grid>
+              </Stack>
+            </Stack>
 
             <Box sx={{ mt: 4 }}>
               <Typography variant="h6" gutterBottom>
@@ -121,33 +115,25 @@ export default function Quote() {
               )}
             </Box>
           </Paper>
-        </Grid>
+        </Box>
 
-        <Grid item xs={12} md={4}>
+        <Box sx={{ flex: 1 }}>
           <Paper sx={{ p: 3 }}>
             <Typography variant="h6" gutterBottom>
               Price Summary
             </Typography>
             <Box sx={{ mb: 2 }}>
-              <Grid container justifyContent="space-between">
-                <Grid item>
-                  <Typography>PCB Manufacturing</Typography>
-                </Grid>
-                <Grid item>
-                  <Typography>$XX.XX</Typography>
-                </Grid>
-              </Grid>
+              <Stack direction="row" justifyContent="space-between">
+                <Typography>PCB Manufacturing</Typography>
+                <Typography>$XX.XX</Typography>
+              </Stack>
             </Box>
             <Divider sx={{ my: 2 }} />
             <Box sx={{ mb: 2 }}>
-              <Grid container justifyContent="space-between">
-                <Grid item>
-                  <Typography variant="h6">Total</Typography>
-                </Grid>
-                <Grid item>
-                  <Typography variant="h6">$XX.XX</Typography>
-                </Grid>
-              </Grid>
+              <Stack direction="row" justifyContent="space-between">
+                <Typography variant="h6">Total</Typography>
+                <Typography variant="h6">$XX.XX</Typography>
+              </Stack>
             </Box>
             <Button
               variant="contained"
@@ -158,8 +144,8 @@ export default function Quote() {
               Place Order
             </Button>
           </Paper>
-        </Grid>
-      </Grid>
+        </Box>
+      </Stack>
     </Container>
   );
 }
