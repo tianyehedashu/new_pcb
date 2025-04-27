@@ -1,0 +1,2 @@
+import{o as t}from"./createSvgIcon-DQGc0yfc.js";function e(...t){return t.reduce(((t,e)=>null==e?t:function(...n){t.apply(this,n),e.apply(this,n)}),(()=>{}))}function n(t,e=166){let n;function o(...o){clearTimeout(n),n=setTimeout((()=>{t.apply(this,o)}),e)}return o.clear=()=>{clearTimeout(n)},o}function o(e){return t(e).defaultView||window}export{e as c,n as d,o};
+//# sourceMappingURL=ownerWindow-C0tSwllQ.js.map

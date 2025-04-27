@@ -2,7 +2,7 @@ import { MetaFunction } from "@remix-run/node";
 import { Fragment } from "react/jsx-runtime";
 import AppTopbar from "~/src/Topbar";
 import { Container, Typography, Button, Box, Stack, Card, CardContent, useTheme, Chip, Divider, Grid } from "@mui/material";
-import { Footer } from "~/src/components/Footer";
+import { Footer } from "~/components/Footer";
 import { Link } from "@remix-run/react";
 import { useAppColorMode } from "~/src/Theme";
 

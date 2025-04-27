@@ -1,0 +1,2 @@
+import{j as r}from"./jsx-runtime-hUYqBQVk.js";import{T as t}from"./Container-zAI8j8MC.js";import{L as o}from"./components-DiRXzZl3.js";function s(){return r.jsxs(t,{variant:"body2",align:"center",sx:{color:"text.secondary",my:10},children:["Copyright © ",r.jsx(o,{to:"https://yourdata.plus/",children:r.jsxs(t,{variant:"caption",color:"text.secondary",children:["YourData",r.jsx("sup",{children:"+"})]})})," ",(new Date).getFullYear(),"."]})}export{s as C};
+//# sourceMappingURL=Copyright-COoIyPLA.js.map
