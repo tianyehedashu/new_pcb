@@ -125,16 +125,10 @@ export default function Home() {
         <Stack spacing={6}>
           {/* Stats Section */}
           <Box>
-            <Grid container spacing={2} justifyContent="center">
+            <Stack direction="row" spacing={2} justifyContent="center" flexWrap="wrap" useFlexGap>
               {stats.map((stat) => (
-                <Grid item xs={6} sm={3} key={stat.label}>
-                  <Card 
-                    elevation={0}
-                    sx={{ 
-                      bgcolor: 'transparent',
-                      textAlign: 'center',
-                    }}
-                  >
+                <Box key={stat.label} sx={{ flex: '1 1 200px', textAlign: 'center' }}>
+                  <Card elevation={0} sx={{ bgcolor: 'transparent' }}>
                     <CardContent>
                       <Typography variant="h4" color="primary" gutterBottom>
                         {stat.value}
@@ -144,9 +138,9 @@ export default function Home() {
                       </Typography>
                     </CardContent>
                   </Card>
-                </Grid>
+                </Box>
               ))}
-            </Grid>
+            </Stack>
           </Box>
 
           {/* Services Section */}

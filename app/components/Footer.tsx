@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography, Link as MuiLink } from '@mui/material';
+import { Box, Container, Stack, Typography, Link as MuiLink } from '@mui/material';
 import { Link } from '@remix-run/react';
 
 const footerLinks = [
@@ -31,9 +31,9 @@ export function Footer() {
       }}
     >
       <Container maxWidth="lg">
-        <Grid container spacing={4}>
+        <Stack direction="row" spacing={4} flexWrap="wrap" useFlexGap>
           {footerLinks.map((section) => (
-            <Grid xs={12} sm={6} md={3} key={section.title}>
+            <Box key={section.title} sx={{ flex: '1 1 200px' }}>
               <Typography variant="h6" gutterBottom>
                 {section.title}
               </Typography>
@@ -56,9 +56,9 @@ export function Footer() {
                   </Box>
                 ))}
               </Box>
-            </Grid>
+            </Box>
           ))}
-          <Grid xs={12} sm={6} md={3}>
+          <Box sx={{ flex: '1 1 200px' }}>
             <Typography variant="h6" gutterBottom>
               Contact Us
             </Typography>
@@ -71,8 +71,8 @@ export function Footer() {
             <Typography variant="body2">
               Address: 123 PCB Street, Shenzhen, China
             </Typography>
-          </Grid>
-        </Grid>
+          </Box>
+        </Stack>
         <Box sx={{ mt: 4, pt: 2, borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
           <Typography variant="body2" align="center">
             © {new Date().getFullYear()} INNO PCB. All rights reserved.
